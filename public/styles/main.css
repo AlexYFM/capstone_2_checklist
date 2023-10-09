@@ -14,3 +14,12 @@ form{
 p{
     margin-bottom: 0;
 }
+
+
+body {
+    overflow: hidden;
+    background: linear-gradient(to top right, #ffffff, #33ccff);
+}
+  
+  
+  

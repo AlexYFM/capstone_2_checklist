@@ -1,11 +1,11 @@
 
-<body>
+<body class="d-flex flex-column h-100">
     <%- include("partials/header.ejs") %>
     <div class="container d-flex justify-content-center">
         <h1>Work Task List</h1>
     </div>
     <div class="container d-flex justify-content-center">
-        <ul class="list-group list-group-light">
+        <ul class="list-group list-group-light my-5">
         <% for(let i=0; i<locals.work.length; i++){ %>
             <li class="task list-group-item">
                 <input type="checkbox" class="checkbox">
@@ -22,6 +22,8 @@
             </li>
         </ul>
     </div>
+
+    <%- include("partials/footer.ejs") %>
     <script>
         for (let i=0; i<document.querySelectorAll('.checkbox').length; i++){
             let checkbox = document.querySelectorAll('.checkbox')[i]

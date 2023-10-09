@@ -1,0 +1,38 @@
+
+<body>
+    <%- include("partials/header.ejs") %>
+    <div>
+        <h1>Daily Task List</h1>
+    </div>
+    <% for(let i=0; i<locals.home.length; i++){ %>
+        <div class="task">
+            <input type="checkbox" class="checkbox">
+            <p><%= locals.home[i] %></p>
+        </div>
+    <%} %>
+    <div class="task">
+        <form action="/submit" method="POST">
+            <input type="text" name="task" placeholder="New task">
+            <input type="submit" value="✓">
+        </form>
+    </div>
+
+    <script>
+        console.log(document.querySelectorAll('.checkbox'))
+        for (let i=0; i<document.querySelectorAll('.checkbox').length; i++){
+            let checkbox = document.querySelectorAll('.checkbox')[i]
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked){
+                    let parent = checkbox.parentElement
+                    parent.querySelector('p').classList.add('checked')
+                }
+                else{
+                    let parent = checkbox.parentElement
+                    parent.querySelector('p').classList.remove('checked')
+                }
+            })
+        }
+    </script>
+
+</body>
+</html>
